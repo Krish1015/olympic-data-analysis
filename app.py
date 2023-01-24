@@ -148,7 +148,7 @@ if user_menu == 'Athlete wise Analysis':
                      'Beach Volleyball', 'Triathlon', 'Rugby', 'Polo', 'Ice Hockey']
     for sport in famous_sports:
         temp_df = athlete_df[athlete_df['Sport'] == sport]
-        x.append(temp_df[temp_df['Medal'] == 'Gold']['Age'].dropna().values)
+        x.append(temp_df[temp_df['Medal'] == 'Gold']['Age'].dropna().tolist())
         name.append(sport)
 
     fig = ff.create_distplot(x, name, show_hist=False, show_rug=False)
